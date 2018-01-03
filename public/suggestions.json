@@ -1,18 +1,18 @@
 [
   {
-    "suggestion": "LA Vegan",
+    "restaurant": "LA Vegan",
     "goodFor": ["lunch", "dinner"]
   },
   {
-    "suggestion": "Fatburger",
+    "restaurant": "Fatburger",
     "goodFor": ["lunch", "dinner", "late night"]
   },
   {
-    "suggestion": "800 Degrees",
+    "restaurant": "800 Degrees",
     "goodFor": ["lunch", "dinner"]
   },
   {
-    "suggestion": "Ramen Jinya",
+    "restaurant": "Ramen Jinya",
     "goodFor": ["lunch", "dinner"]
   }
 ]

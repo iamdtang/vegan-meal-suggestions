@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore } from 'redux';
 import { HashRouter } from 'react-router-dom';
+import configureStore from './store/configure';
+import { Provider } from 'react-redux';
 
-ReactDOM.render((
-  <HashRouter>
-    <App />
-  </HashRouter>
-), document.getElementById('root'))
+const store = configureStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </Provider>
+, document.getElementById('root'))
 
 registerServiceWorker();

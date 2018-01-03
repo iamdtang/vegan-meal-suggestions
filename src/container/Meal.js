@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import MealSuggestion from './../presentational/MealSuggestion';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getSuggestion } from './../actions/suggestion';
 
-export default class extends Component {
+class Meal extends Component {
   constructor(props) {
     super(...arguments);
-    console.log('route param', props.match.params.id);
-    fetch('/suggestions.json').then((response) => {
-      return response.json().then((suggestions) => {
-        console.log(suggestions);
-      });
-    });
+    this.props.getSuggestion(props.match.params.id);
   }
   render() {
     return (
-      <MealSuggestion />
+      <MealSuggestion suggestion={this.props.suggestion} />
     );
   }
 }
+
+function mapStateToProps(state, ownProps) {
+  return {
+    suggestion: state.suggestion
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // getSuggestion(mealType) {
+    //   dispatch(suggestionActions.getSuggestion(mealType));
+    // }
+    // OR
+    getSuggestion: bindActionCreators(getSuggestion, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Meal);
