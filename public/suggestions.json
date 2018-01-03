@@ -14,5 +14,24 @@
   {
     "restaurant": "Ramen Jinya",
     "goodFor": ["lunch", "dinner"]
+  },
+  {
+    "restaurant": "SOL",
+    "goodFor": ["lunch", "dinner"]
+  },
+  {
+    "restaurant": "home",
+    "dish": "Greek eggplant",
+    "goodFor": ["lunch", "dinner"]
+  },
+  {
+    "restaurant": "home",
+    "dish": "Cauliflower mushroom thing",
+    "goodFor": ["lunch", "dinner"]
+  },
+  {
+    "restaurant": "home",
+    "dish": "Asian tofu dish with cabbage",
+    "goodFor": ["lunch", "dinner"]
   }
 ]

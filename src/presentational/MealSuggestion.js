@@ -3,22 +3,29 @@ import { Link } from 'react-router-dom';
 
 export default class extends Component {
   render() {
+    let contents;
     if (this.props.suggestion) {
-      return (
-        <div>
-          <p>
-            How about {this.props.suggestion.restaurant}?
-          </p>
-          <Link to="/">Start Over</Link>
-        </div>
-      );
+      contents = [
+        'How about eating'
+      ];
+
+      if (this.props.suggestion.dish) {
+        contents.push('the');
+        contents.push(this.props.suggestion.dish);
+      }
+
+      contents.push('at');
+      contents.push(this.props.suggestion.restaurant);
+      contents = <p>{contents.join(' ')}?</p>;
     } else {
-      return (
-        <div>
-          No suggestions at this time.
-          <Link to="/">Start Over</Link>
-        </div>
-      );
+      contents = <p>No suggestions at this time.</p>;
     }
+
+    return (
+      <div>
+        {contents}
+        <Link to="/">Start Over</Link>
+      </div>
+    );
   }
 }
